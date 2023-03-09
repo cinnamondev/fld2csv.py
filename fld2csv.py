@@ -38,7 +38,7 @@ args.add_argument('-o', '--output',
                     required=False,
                     nargs=1)
 a = args.parse_args()
-print(a.file)
+print(a.file.name)
 
 exit()
 
