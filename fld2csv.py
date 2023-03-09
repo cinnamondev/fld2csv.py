@@ -40,6 +40,8 @@ parser.add_argument('file',
 a = parser.parse_args()
 print(a)
 
+exit()
+
 
 f_in = open("file.fld", "r")
 f_in.readline() # discard
