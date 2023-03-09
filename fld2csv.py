@@ -27,6 +27,7 @@ f_in = open("file.fld", "r")
 f_in.readline() # discard
 output = f_in.readline()
 for l in f_in:
+    l = l.replace("  ", ",")
     l = l.replace(" ", ",")
     output += l
 print(output)
