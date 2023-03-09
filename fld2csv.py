@@ -41,7 +41,8 @@ a = args.parse_args()
 if a.output == None:
     a.output = open(
         a.file.name.replace(".fld", ".csv"),
-        "w")
+        "w",
+        encoding='UTF-8')
 print(a)
 f_in = a.file
 f_out = a.output
