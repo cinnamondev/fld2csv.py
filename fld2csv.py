@@ -28,7 +28,7 @@ f_in.readline() # discard
 output = f_in.readline()
 for l in f_in:
     l = l.replace(" ", ",")
-    headers += l
+    output += l
 f_in.close() # Finished
 
 
