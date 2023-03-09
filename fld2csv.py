@@ -30,7 +30,13 @@ args = argparse.ArgumentParser(
                     description = 'Converts a fld file (ansys) to a csv file.',
                     epilog = 'Licensed under Apache 2.0. Read source for details')
 parser.add_argument('-o', '--output',
-                    type=argparse.FileType('w', encoding='UTF-8'))  # on/off flag
+                    type=argparse.FileType('w', encoding='UTF-8'),
+                    required=False,
+                    nargs=1)
+parser.add_argument('file',
+                    type=argparse.FileType('w', encoding='UTF-8'),
+                    required=True
+                    )
 
 f_in = open("file.fld", "r")
 f_in.readline() # discard
