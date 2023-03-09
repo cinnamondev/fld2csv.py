@@ -26,7 +26,7 @@ import argparse
 # Line 1+n - Space seperated scientific notation.
 
 args = argparse.ArgumentParser(
-                    prog = 'fld2csv',
+                    prog = 'fld2csv.py',
                     description = 'Converts a fld file (ansys) to a csv file.',
                     epilog = """
 Unless required by applicable law or agreed to in writing, software\n
