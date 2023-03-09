@@ -23,10 +23,10 @@
 # Line 0 - Contain as whole cell
 # Line 1 - comma seperated
 # Line 1+n - Space seperated scientific notation.
-f_input = open("file.fld", "r")
-f.readline() # discard
-headers = f.readline()
-for l in f:
+f_in = open("file.fld", "r")
+f_in.readline() # discard
+headers = f_in.readline()
+for l in f_in:
     print(l)
 
 f_input.close() # Finished
