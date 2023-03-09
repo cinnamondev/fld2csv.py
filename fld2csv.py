@@ -40,6 +40,7 @@ args.add_argument('-o', '--output',
 a = args.parse_args()
 if a.output == None:
     a.output = a.file.name.replace(".fld", ".csv")
+print(a)
 f_in = a.file
 f_out = a.output
 
