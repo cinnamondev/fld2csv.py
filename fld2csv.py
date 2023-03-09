@@ -60,6 +60,8 @@ for l in f_in:
 print(output)
 f_out.write(output)
 
+f_out.close()
+f_in.close()
 
 
 """
