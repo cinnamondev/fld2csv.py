@@ -37,7 +37,7 @@ args.add_argument('file',
                     type=argparse.FileType('w', encoding='UTF-8'),
                     required=True
                     )
-a = parser.parse_args()
+a = args.parse_args()
 print(a)
 
 exit()
