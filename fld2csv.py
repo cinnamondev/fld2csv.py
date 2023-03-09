@@ -25,11 +25,10 @@
 # Line 1+n - Space seperated scientific notation.
 f_in = open("file.fld", "r")
 f_in.readline() # discard
-headers = f_in.readline()
+output = f_in.readline()
 for l in f_in:
     l = l.replace(" ", ",")
-    print(l)
-
+    headers += l
 f_in.close() # Finished
 
 
