@@ -31,11 +31,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n
 See the License for the specific language governing permissions and\n
 limitations under the License.
                     """)
-args.add_argument('file',
+args.add_argument('SOURCE',
                     type=argparse.FileType('r', encoding='UTF-8'),
+                    help="Required. SOURCE is a .fld or fld format file."
                     )
 args.add_argument('-o', '--output', 
                     type=argparse.FileType('w', encoding='UTF-8'),
+                    help="Optionally provide a filename. If this is omitted, the program will use the the source file name."
                     required=False,
                     )
 a = args.parse_args()
