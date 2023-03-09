@@ -29,6 +29,7 @@ output = f_in.readline()
 for l in f_in:
     l = l.replace(" ", ",")
     output += l
+print(output)
 f_in.close() # Finished
 
 
