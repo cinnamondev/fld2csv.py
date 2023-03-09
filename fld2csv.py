@@ -37,7 +37,7 @@ args.add_argument('SOURCE',
                     )
 args.add_argument('-o', '--output', 
                     type=argparse.FileType('w', encoding='UTF-8'),
-                    help="Optionally provide a filename. If this is omitted, the program will use the the source file name."
+                    help="Optionally provide a filename. If this is omitted, the program will use the the source file name.",
                     required=False,
                     )
 a = args.parse_args()
