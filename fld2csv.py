@@ -4,8 +4,7 @@
 #   fld2csv.py file.fld -o output.csv
 # If -o is ommitted, the output name will default to <file>.csv.
 
-"""
-   Copyright 2023 Cinnamondev
+"""Copyright 2023 Cinnamondev
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -19,6 +18,20 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 """
+
+# This may only work under some circumstances, this was made for a specific lab. but since it seems to be space delimited, probably fine.
+# Line 0 - Contain as whole cell
+# Line 1 - comma seperated
+# Line 1+n - Space seperated scientific notation.
+f_input = open("file.fld", "r")
+f.readline() # discard
+headers = f.readline()
+for l in f:
+    print(l)
+
+f_input.close() # Finished
+
+
 
 """
                                  Apache License
