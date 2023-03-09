@@ -46,21 +46,17 @@ if a.output == None:
 f_in = a.file
 f_out = a.output
 
-f_in.readline() # discard
-output = f_in.readline()
-i =0
-for l in f_in:
+a.file.readline() # discard
+output = a.file.readline()
+for l in a.file:
     l = l.replace("  ", ",") # sometimes there is a double space.
     l = l.replace(" ", ",")
-    output += l
-    i+=1
-    if i > 10:
-        break
-print(output)
-f_out.write(output)
+    output += l 
 
-f_out.close()
-f_in.close()
+a.output.write(output)
+
+a.output.close()
+a.file.close()
 
 
 """
