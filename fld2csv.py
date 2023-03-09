@@ -26,10 +26,14 @@
 f_in = open("file.fld", "r")
 f_in.readline() # discard
 output = f_in.readline()
+i =0
 for l in f_in:
     l = l.replace("  ", ",") # sometimes there is a double space.
     l = l.replace(" ", ",")
     output += l
+    i+=1
+    if i > 10:
+        break
 print(output)
 f_out = open("file.csv", "a")
 f_out.write(output)
