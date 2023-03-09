@@ -27,7 +27,8 @@ f_in = open("file.fld", "r")
 f_in.readline() # discard
 headers = f_in.readline()
 for l in f_in:
-    l.replace(" ", ",")
+    l = l.replace(" ", ",")
+    print(l)
 
 f_in.close() # Finished
 
