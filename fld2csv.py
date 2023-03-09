@@ -43,7 +43,6 @@ if a.output == None:
         a.file.name.replace(".fld", ".csv"),
         "w",
         encoding='UTF-8')
-print(a)
 f_in = a.file
 f_out = a.output
 
