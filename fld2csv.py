@@ -29,7 +29,7 @@ headers = f_in.readline()
 for l in f_in:
     print(l)
 
-f_input.close() # Finished
+f_in.close() # Finished
 
 
 
