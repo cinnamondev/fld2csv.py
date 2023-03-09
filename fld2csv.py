@@ -33,11 +33,13 @@ args = argparse.ArgumentParser(
 args.add_argument('file',
                     type=argparse.FileType('r', encoding='UTF-8'),
                     )
-args.add_argument('-o', '--output',
+args.add_argument('-o', '--output', 
                     type=argparse.FileType('w', encoding='UTF-8'),
                     required=False,
                     nargs=1)
 a = args.parse_args()
+print(a)
+exit()
 if a.output == None:
     a.output = open(
         a.file.name.replace(".fld", ".csv"),
