@@ -37,6 +37,9 @@ parser.add_argument('file',
                     type=argparse.FileType('w', encoding='UTF-8'),
                     required=True
                     )
+a = parser.parse_args()
+print(a)
+
 
 f_in = open("file.fld", "r")
 f_in.readline() # discard
