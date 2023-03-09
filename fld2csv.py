@@ -28,15 +28,15 @@ import argparse
 args = argparse.ArgumentParser(
                     prog = 'fld2csv',
                     description = 'Converts a fld file (ansys) to a csv file.',
-                    epilog = 'Licensed under Apache 2.0. Read source for details')
+                    epilog = 'Licensed under Apache 2.0. Read source for details'
+                    )
+args.add_argument('file',
+                    type=argparse.FileType('w', encoding='UTF-8'),
+                    )
 args.add_argument('-o', '--output',
                     type=argparse.FileType('w', encoding='UTF-8'),
                     required=False,
                     nargs=1)
-args.add_argument('file',
-                    type=argparse.FileType('w', encoding='UTF-8'),
-                    required=True
-                    )
 a = args.parse_args()
 print(a)
 
