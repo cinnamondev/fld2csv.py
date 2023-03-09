@@ -31,22 +31,18 @@ args = argparse.ArgumentParser(
                     epilog = 'Licensed under Apache 2.0. Read source for details'
                     )
 args.add_argument('file',
-                    type=argparse.FileType('w', encoding='UTF-8'),
+                    type=argparse.FileType('r', encoding='UTF-8'),
                     )
 args.add_argument('-o', '--output',
                     type=argparse.FileType('w', encoding='UTF-8'),
                     required=False,
                     nargs=1)
 a = args.parse_args()
-print(a)
 if a.output == None:
     a.output = a.file.name.replace(".fld", ".csv")
+f_in = a.file
+f_out = a.output
 
-print(a)
-exit()
-
-
-f_in = open("file.fld", "r")
 f_in.readline() # discard
 output = f_in.readline()
 i =0
@@ -58,11 +54,7 @@ for l in f_in:
     if i > 10:
         break
 print(output)
-f_out = open("file.csv", "w")
 f_out.write(output)
-f_out.close()
-
-f_in.close() # Finished
 
 
 
