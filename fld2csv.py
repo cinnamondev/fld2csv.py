@@ -38,8 +38,6 @@ args.add_argument('-o', '--output',
                     required=False,
                     )
 a = args.parse_args()
-print(a)
-exit()
 if a.output == None:
     a.output = open(
         a.file.name.replace(".fld", ".csv"),
