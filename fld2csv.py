@@ -29,11 +29,11 @@ args = argparse.ArgumentParser(
                     prog = 'fld2csv',
                     description = 'Converts a fld file (ansys) to a csv file.',
                     epilog = 'Licensed under Apache 2.0. Read source for details')
-parser.add_argument('-o', '--output',
+args.add_argument('-o', '--output',
                     type=argparse.FileType('w', encoding='UTF-8'),
                     required=False,
                     nargs=1)
-parser.add_argument('file',
+args.add_argument('file',
                     type=argparse.FileType('w', encoding='UTF-8'),
                     required=True
                     )
