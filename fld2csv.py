@@ -19,10 +19,19 @@
    limitations under the License.
 """
 
+import argparse 
 # This may only work under some circumstances, this was made for a specific lab. but since it seems to be space delimited, probably fine.
 # Line 0 - Contain as whole cell
 # Line 1 - comma seperated
 # Line 1+n - Space seperated scientific notation.
+
+args = argparse.ArgumentParser(
+                    prog = 'fld2csv',
+                    description = 'Converts a fld file (ansys) to a csv file.',
+                    epilog = 'Licensed under Apache 2.0. Read source for details')
+parser.add_argument('-o', '--output',
+                    type=argparse.FileType('w', encoding='UTF-8'))  # on/off flag
+
 f_in = open("file.fld", "r")
 f_in.readline() # discard
 output = f_in.readline()
