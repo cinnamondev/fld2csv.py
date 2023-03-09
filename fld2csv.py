@@ -35,7 +35,7 @@ for l in f_in:
     if i > 10:
         break
 print(output)
-f_out = open("file.csv", "a")
+f_out = open("file.csv", "w")
 f_out.write(output)
 f_out.close()
 
