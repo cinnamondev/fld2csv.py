@@ -20,10 +20,6 @@
 """
 
 import argparse 
-# This may only work under some circumstances, this was made for a specific lab. but since it seems to be space delimited, probably fine.
-# Line 0 - Contain as whole cell
-# Line 1 - comma seperated
-# Line 1+n - Space seperated scientific notation.
 
 args = argparse.ArgumentParser(
                     prog = 'fld2csv.py',
@@ -43,23 +39,25 @@ args.add_argument('-o', '--output',
                     required=False,
                     )
 a = args.parse_args()
-if a.output == None:
+if a.output == None:                        # handle no output file
     a.output = open(
         a.file.name.replace(".fld", ".csv"),
         "w",
         encoding='UTF-8')
-f_in = a.file
-f_out = a.output
 
+
+# This may only work under some circumstances, this was made for a specific lab. but since it seems to be space delimited, probably fine.
+# Line 0 - Contain as whole cell
+# Line 1 - comma seperated
+# Line 1+n - Space seperated scientific notation.
 a.file.readline() # discard
 output = a.file.readline()
 for l in a.file:
     l = l.replace("  ", ",") # sometimes there is a double space.
     l = l.replace(" ", ",")
     output += l 
-
 a.output.write(output)
-
+# Finished!
 a.output.close()
 a.file.close()
 
