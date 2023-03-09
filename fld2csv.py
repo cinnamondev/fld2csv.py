@@ -30,6 +30,10 @@ for l in f_in:
     l = l.replace(" ", ",")
     output += l
 print(output)
+f_out = open("file.csv", "a")
+f_out.write(output)
+f_out.close()
+
 f_in.close() # Finished
 
 
