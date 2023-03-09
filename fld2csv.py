@@ -39,7 +39,9 @@ args.add_argument('-o', '--output',
                     nargs=1)
 a = args.parse_args()
 if a.output == None:
-    a.output = a.file.name.replace(".fld", ".csv")
+    a.output = open(
+        a.file.name.replace(".fld", ".csv"),
+        "w")
 print(a)
 f_in = a.file
 f_out = a.output
