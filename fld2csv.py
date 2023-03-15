@@ -19,6 +19,8 @@
    limitations under the License.
 """
 
+# 15/03/2023: Moved to github repository.
+
 import argparse 
 import re
 
@@ -39,12 +41,17 @@ args.add_argument('-o', '--output',
                     type=argparse.FileType('w', encoding='UTF-8'),
                     required=False,
                     )
+args.add_argument('-E', '--elvis',
+                     type=bool
+                     required=false
+                     help="Support for ElvisMX log files.")                    
 a = args.parse_args()
-if a.output == None:                        # handle no output file
-    a.output = open(
-        a.file.name.replace(".fld", ".csv"),
-        "w",
-        encoding='UTF-8')
+if a.output == None:                       # handle no output file
+   fileName = s.rsplit('.',1) + ".csv" # all cases
+   a.output = open(
+      fileName,
+      "w",
+      encoding='UTF-8')
 
 
 # This may only work under some circumstances, this was made for a specific lab. but since it seems to be space delimited, probably fine.
