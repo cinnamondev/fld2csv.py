@@ -20,6 +20,7 @@
 """
 
 import argparse 
+import re
 
 args = argparse.ArgumentParser(
                     prog = 'fld2csv.py',
@@ -31,13 +32,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n
 See the License for the specific language governing permissions and\n
 limitations under the License.
                     """)
-args.add_argument('SOURCE',
+args.add_argument('file',
                     type=argparse.FileType('r', encoding='UTF-8'),
-                    help="Required. SOURCE is a .fld or fld format file."
                     )
 args.add_argument('-o', '--output', 
                     type=argparse.FileType('w', encoding='UTF-8'),
-                    help="Optionally provide a filename. If this is omitted, the program will use the the source file name.",
                     required=False,
                     )
 a = args.parse_args()
@@ -55,9 +54,10 @@ if a.output == None:                        # handle no output file
 a.file.readline() # discard
 output = a.file.readline()
 for l in a.file:
-    l = l.replace("  ", ",") # sometimes there is a double space.
-    l = l.replace(" ", ",")
-    output += l 
+   l = re.sub(" +", ",", l)
+   l = l.replace("  ", ",") # sometimes there is a double space.
+   l = l.replace(" ", ",")
+   output += l 
 a.output.write(output)
 # Finished!
 a.output.close()
