@@ -55,8 +55,6 @@ a.file.readline() # discard
 output = a.file.readline()
 for l in a.file:
    l = re.sub(" +", ",", l)
-   l = l.replace("  ", ",") # sometimes there is a double space.
-   l = l.replace(" ", ",")
    output += l 
 a.output.write(output)
 # Finished!
