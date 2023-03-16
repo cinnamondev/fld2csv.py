@@ -4,13 +4,36 @@ Parser for FLD files to CSV format.
 
 
 ## Usage
+```
+usage: fld2csv.py [-h] [-o [OUTPUT]] [-t {fld,elvis}] [-n] [file]
 
-```fld2csv.py <input file> -o <outputFile> -t <type>```
+Helper script for parsing FLD and NI ELVISmx log files.
+https://github.com/cinnamondev/fld2csv.py/
 
-Where -o is NOT specified, it will be renamed to fileName.csv .
+positional arguments:
+  file                  Location of file to parse. Also accepts piped input.
+
+options:
+  -h, --help            show this help message and exit
+  -o [OUTPUT], --output [OUTPUT]
+                        When omitted, it will guess first on input filename, failing that, it will use <type>_<timestamp>.csv .
+                        If the output of the script is redirected, it will output results to stdout instead of a file.
+  -t {fld,elvis}, --type {fld,elvis}
+                        Default: fld.
+                        fld: Parse as a fld file.
+                        elvis: Parse as a log file output from an NI ELVISmx tool.
+  -n, --quiet           Execution with --quiet will not open the csv file in its associated program. Ignored if output is redirected.
+```
+Example:
+```.\fld2csv.py elvis.txt -n -t elvis -o output.csv```
+Creates a file `output.csv`, using `elvis.txt`as input in elvis file mode, without opening Excel.
 
 
-Where -t is NOT specified, it will *always* default to fld.
+### Scripting usage
+The script can detect interactive I/O and will accept/output to redirected I/O.
+Piped input will not require an input file. Piped output will bypass saving to a file.
+Example:
+```cat file.fld > .\fld2csv.py > file.csv```    
 
 ## Additional formats
 
