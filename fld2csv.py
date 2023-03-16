@@ -62,7 +62,7 @@ a = args.parse_args()
 # Input guard - only allow piped input or provided file. this looks ugly :(
 is_stdin = a.file.name == '<stdin>'
 is_stdout = a.output.name == '<stdout>'
-if not ((a.file.name == '<stdin>') and not sys.stdin.isatty()) or (a.file.name != '<stdin>'): 
+if not (((a.file.name == '<stdin>') and not sys.stdin.isatty()) or (a.file.name != '<stdin>')): 
    print("""usage: fld2csv.py [-h] [-o OUTPUT] [-t {fld,elvis}] [-n] file
 fld2csv.py: error: the following arguments are required: file""")
    exit()
@@ -73,14 +73,13 @@ if a.output.name == '<stdout>' and sys.stdout.isatty():          # handle no out
       fileName = a.file.name.rsplit('.',1)[0] + ".csv" # Guess using input file.
    else:   
       # Create file name using ISO timestamp.
-      filename = a.type +"_" + datetime.datetime.now().isoformat().replace(":","-") + ".csv"
+      fileName = a.type +"_" + datetime.datetime.now().isoformat().replace(":","-") + ".csv"
    
    a.output = open(
-      filename,
+      fileName,
       "w",
       encoding='UTF-8')
 
-print(a)
 # Now for the actual work!
 match a.type:
    case "fld":
