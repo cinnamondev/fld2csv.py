@@ -33,7 +33,7 @@ Creates a file `output.csv`, using `elvis.txt`as input in elvis file mode, witho
 The script can detect interactive I/O and will accept/output to redirected I/O.
 Piped input will not require an input file. Piped output will bypass saving to a file.
 Example:
-```cat file.fld > .\fld2csv.py > file.csv```    
+```cat file.fld | .\fld2csv.py > file.csv```    
 
 ## Additional formats
 
